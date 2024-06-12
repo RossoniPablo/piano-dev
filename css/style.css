@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #ebebeb;
+}
+
+.piano {
+  background-color: #121212;
+  width: 1000px;
+  height: 400px;
+  margin: 100px auto 0;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  & .controls {
+    color: rgb(255, 255, 255, 0.8);
+    padding: 30px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    & h1 {
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+
+    & .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    & .switcher {
+      width: 50px;
+      height: 25px;
+      background-color: #555;
+      display: flex;
+      border-radius: 50px;
+      padding: 4px;
+
+
+      & .switcher-button {
+        height: 100%;
+        aspect-ratio: 1/1;
+        background-color: #ddd;
+        border-radius: 25px;
+      }
+    }
+
+    & .switcher-active {
+      background-color: #006eff;
+      justify-content: flex-end;
+
+    }
+  }
+
+  & .piano-keys {
+    width: 100%;
+    height: 300px;
+    background-color: #181818;
+    border-radius: 15px;
+    padding: 30px 40px;
+    display: flex;
+
+    & .key {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 8px;
+      user-select: none;
+    }
+
+    & .key span {
+      font-weight: 600;
+      position: absolute;
+      transition-duration: 300ms;
+
+    }
+
+    & .white {
+      background-color: #fff;
+      flex-grow: 1;
+      border-radius: 5px;
+      border-bottom: 8px solid #ddd;
+      color: rgb(0, 0, 0, 0.3);
+      margin-left: -17px;
+      z-index: 1;
+
+    }
+
+    & .white:nth-child(1) {
+      margin-left: 0;
+    }
+
+
+    & .white:nth-child(5) {
+      margin-right: 20px;
+    }
+
+    & .white:nth-child(12) {
+      margin-right: 20px;
+    }
+
+    & .white:nth-child(17) {
+      margin-right: 20px;
+    }
+
+
+
+    & .black {
+      width: 40px;
+      background: linear-gradient(black, #333);
+      height: 150px;
+      border-radius: 0 0 5px 5px;
+      border-bottom: 8px solid #222;
+      margin-left: -20px;
+      z-index: 2;
+      color: rgb(255, 255, 255, 0.3);
+    }
+  }
+}
+
+
+/* Classe para tratar no js,quando clicar na tecla black */
+/* .black-pressed {
+  background: linear-gradient(#222, black);
+  border-bottom: none;
+  height: 148px;
+} */
+
+.disabled-keys span {
+  opacity: 0;
+}
